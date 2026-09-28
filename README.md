@@ -1,18 +1,21 @@
-#ROBOCON-Vision-Assignment-1
-##1. System Information
-###1.1 操作系统版本
-			NAME="Ubuntu"
-			VERSION="20.04.6 LTS (Focal Fossa)"
-			ID=ubuntu
-			ID_LIKE=debian
-			PRETTY_NAME="Ubuntu 20.04.6 LTS"
-			VERSION_ID="20.04"
-			HOME_URL="https://www.ubuntu.com/"
-			SUPPORT_URL="https://help.ubuntu.com/"
-			BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
-			PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
-			VERSION_CODENAME=focal
-			UBUNTU_CODENAME=focal
+# ROBOCON-Vision-Assignment-1
+
+## 1. System Information
+
+### 1.1 操作系统版本
+```text
+NAME="Ubuntu"
+VERSION="20.04.6 LTS (Focal Fossa)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 20.04.6 LTS"
+VERSION_ID="20.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=focal
+UBUNTU_CODENAME=focal
 ###1.2 内核版本
 			5.15.0-139-generic
 ###1.3 CPU 信息
@@ -71,6 +74,7 @@
 			Kernel modules: amdgpu
 ###1.6 CUDA信息
 			无
+```
 ## 2. Python Project A
 
 ### 环境配置
@@ -108,12 +112,13 @@ top -p <PID>
 conda create -n robo_vision_b python=3.9 -y
 conda activate robo_vision_b
 pip install opencv-python numpy
+```
 ## 5. C++ Manual Build
 
 ### 依赖安装
 ```bash
 sudo apt install g++ libopencv-dev libeigen3-dev -y
-
+```
 ## 6. CMake Build
 
 ### CMakeLists.txt 内容
@@ -135,7 +140,7 @@ add_executable(process_video src/main.cpp src/transform.cpp)
 
 # 链接 OpenCV 库
 target_link_libraries(process_video ${OpenCV_LIBS})
-
+```
 ## 7. Git / GitHub
 
 ### 用到的 Git 命令
@@ -157,4 +162,4 @@ git merge feature/gitignore
 
 # 推送到 GitHub
 git push origin master
-
+```
