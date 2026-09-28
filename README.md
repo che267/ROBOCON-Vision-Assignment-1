@@ -108,3 +108,31 @@ top -p <PID>
 conda create -n robo_vision_b python=3.9 -y
 conda activate robo_vision_b
 pip install opencv-python numpy
+## 5. C++ Manual Build
+
+### 依赖安装
+```bash
+sudo apt install g++ libopencv-dev libeigen3-dev -y
+
+## 6. CMake Build
+
+### CMakeLists.txt 内容
+```cmake
+cmake_minimum_required(VERSION 3.10)
+project(RoboconVision)
+
+set(CMAKE_CXX_STANDARD 14)
+
+# 查找 OpenCV 依赖
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS} /usr/include/eigen3)
+
+# 包含头文件目录
+include_directories(include)
+
+# 添加可执行文件（源文件在 src 目录里）
+add_executable(process_video src/main.cpp src/transform.cpp)
+
+# 链接 OpenCV 库
+target_link_libraries(process_video ${OpenCV_LIBS})
+
