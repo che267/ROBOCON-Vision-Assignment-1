@@ -99,3 +99,12 @@ top -p <PID>
 
 ### htop 截图证据
 ![htop截图](assets/process/htop_demo.png)
+
+## 4. Python Project B
+
+### 环境配置
+由于 Project A 和 B 的 Python 版本互相冲突，必须使用两个完全隔离的 Conda 环境：
+```bash
+conda create -n robo_vision_b python=3.9 -y
+conda activate robo_vision_b
+pip install opencv-python numpy
