@@ -123,12 +123,33 @@ conda create -n robo_vision_b python=3.9 -y
 conda activate robo_vision_b
 pip install opencv-python numpy
 ```
+### 程序功能
+- 离线读取 Project A 生成的 raw_capture.mp4。
+-对视频进行灰度化 + Canny 边缘检测。
+-输出新的 MP4 视频文件 processed_output.mp4。
+
+### 运行命令
+cd python_B
+python process_video.py
+
+### 为什么不能共用同一个环境？
+-Project A 要求 Python 3.8，Project B 要求 Python 3.9。两个项目的 pyproject.toml 都规定了各自严格的 Python 版本限制，如果共用同一个环境，会导致其中一个项目无法满足自己的版本要求而运行失败。因此必须创建两个完全独立的 Conda 环境。
 ## 5. C++ Manual Build
 
 ### 依赖安装
 ```bash
 sudo apt install g++ libopencv-dev libeigen3-dev -y
 ```
+### 完整 g++ 编译命令
+g++ cpp/src/main.cpp cpp/src/transform.cpp -I cpp/include -o cpp/process_video `pkg-config --cflags --libs opencv4` -I /usr/include/eigen3
+### 运行命令
+./cpp/process_video python_B/test_video.mp4 cpp/cpp_output.mp4
+### 编译问题回答
+--I 的作用？ -I 用于指定头文件所在的搜索目录，告诉编译器去哪里找 transform.hpp。
+-transform.hpp 为什么不需要单独编译成 cpp？ 因为头文件里只包含函数声明，真正的函数实现写在 transform.cpp 里。
+-只写 main.cpp 为什么不能得到完整程序？ 因为 main.cpp 里调用了 transform.cpp 里实现的函数，只编译 main.cpp 会找不到函数定义，链接阶段会报错。
+-编译成功生成了什么文件？ 在当前目录下生成了名为 cpp/process_video 的可执行文件。
+
 ## 6. CMake Build
 
 ### CMakeLists.txt 内容
@@ -151,6 +172,11 @@ add_executable(process_video src/main.cpp src/transform.cpp)
 # 链接 OpenCV 库
 target_link_libraries(process_video ${OpenCV_LIBS})
 ```
+### 构建与运行命令
+cd cpp
+cmake -S . -B build
+cmake --build build
+./build/process_video ../python_B/test_video.mp4 cmake_output.mp4
 ## 7. Git / GitHub
 
 ### 用到的 Git 命令
@@ -173,3 +199,13 @@ git merge feature/gitignore
 # 推送到 GitHub
 git push origin master
 ```
+## 提交记录
+-docs: 完成 Part 1 系统信息采集
+-feat: 完成 Python Project A 和进程观察
+-feat: 完成 Part 4 Python Project B
+-docs: 完成 Part 5 C++手动编译和文档
+-docs: 完成 Part 6 CMake构建和文档
+-docs: 添加 .gitignore 忽略构建文件和大视频
+
+## 分支操作说明
+-创建了 feature/gitignore 分支，用于添加 .gitignore 文件，修改完成后合并回 master 分支，并推送成功。
