@@ -16,9 +16,11 @@ BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
 PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
 VERSION_CODENAME=focal
 UBUNTU_CODENAME=focal
+```
 ### 1.2 内核版本
 ```text
 5.15.0-139-generic
+```
 ### 1.3 CPU 信息
 ```text
 架构：                                x86_64
@@ -67,15 +69,18 @@ Vulnerability Tsx async abort:        Not affected
                                        ssbd mba ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves cqm_llc c
                                       qm_occup_llc cqm_mbm_total cqm_mbm_local clzero irperf xsaveerptr rdpru wbnoinvd cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists
                                        pausefilter pfthreshold avic v_vmsave_vmload vgif v_spec_ctrl umip pku ospke vaes vpclmulqdq rdpid overflow_recov succor smca fsrm
+```
 ### 1.4 显卡与图形驱动
 ```text
 06:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Device 15e7 (rev c5)
+```
 ### 1.5 图形会话环境 (Wayland/X11)
 ```text
 06:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Device 15e7 (rev c5)
 Subsystem: Lenovo Device 3809
 Kernel driver in use: amdgpu
 Kernel modules: amdgpu
+```
 ### 1.6 CUDA信息
 无
 ```
