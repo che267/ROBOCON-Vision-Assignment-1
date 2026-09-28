@@ -71,3 +71,31 @@
 			Kernel modules: amdgpu
 ###1.6 CUDA信息
 			无
+## 2. Python Project A
+
+### 环境配置
+conda create -n robo_vision_a python=3.8 -y
+conda activate robo_vision_a
+pip install opencv-python numpy
+
+### 运行命令
+cd python_A
+python camera.py
+
+### 程序功能
+- 打开摄像头，显示原图、灰度图、轮廓图。
+- 录制视频保存为 raw_capture.mp4。
+- 按 q 或 ESC 退出。
+
+### 截图证据
+![三窗口截图](assets/python_a/camera_demo.png)
+
+## 3. Process Observation
+
+### 查找进程命令
+ps -ef | grep camera.py
+pgrep -f camera.py
+top -p <PID>
+
+### htop 截图证据
+![htop截图](assets/process/htop_demo.png)
