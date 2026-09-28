@@ -85,12 +85,13 @@ Kernel modules: amdgpu
 无
 
 ## 2. Python Project A
-```text
+
 ### 环境配置
+```bash
 conda create -n robo_vision_a python=3.8 -y
 conda activate robo_vision_a
 pip install opencv-python numpy
-
+```
 ### 运行命令
 cd python_A
 python camera.py
@@ -101,8 +102,8 @@ python camera.py
 - 按 q 或 ESC 退出。
 
 ### 截图证据
+
 ![三窗口截图](assets/python_a/camera_demo.png)
-```
 ## 3. Process Observation
 
 ### 查找进程命令
