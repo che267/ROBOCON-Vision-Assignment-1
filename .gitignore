@@ -1,0 +1,12 @@
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 大文件（视频不要提交，只保留在本地）
+*.mp4
+
+# CMake 构建产物
+cpp/build/
+
+# 系统文件
+.DS_Store
