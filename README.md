@@ -136,3 +136,25 @@ add_executable(process_video src/main.cpp src/transform.cpp)
 # 链接 OpenCV 库
 target_link_libraries(process_video ${OpenCV_LIBS})
 
+## 7. Git / GitHub
+
+### 用到的 Git 命令
+```bash
+# 查看状态
+git status
+git log --oneline
+
+# 添加和提交
+git add .
+git commit -m "提交信息"
+
+# 创建并切换分支
+git checkout -b feature/gitignore
+
+# 切换回主分支并合并
+git checkout master
+git merge feature/gitignore
+
+# 推送到 GitHub
+git push origin master
+
