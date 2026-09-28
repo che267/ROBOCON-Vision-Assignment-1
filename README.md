@@ -83,9 +83,9 @@ Kernel modules: amdgpu
 ```
 ### 1.6 CUDA信息
 无
-```
-## 2. Python Project A
 
+## 2. Python Project A
+```text
 ### 环境配置
 conda create -n robo_vision_a python=3.8 -y
 conda activate robo_vision_a
@@ -102,7 +102,7 @@ python camera.py
 
 ### 截图证据
 ![三窗口截图](assets/python_a/camera_demo.png)
-
+```
 ## 3. Process Observation
 
 ### 查找进程命令
