@@ -91,6 +91,8 @@ Kernel modules: amdgpu
 conda create -n robo_vision_a python=3.8 -y
 conda activate robo_vision_a
 pip install opencv-python numpy
+python --version   
+which python       
 ```
 ### 运行命令
 cd python_A
