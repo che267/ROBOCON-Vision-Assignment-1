@@ -82,11 +82,11 @@ Kernel driver in use: amdgpu
 Kernel modules: amdgpu
 ```
 ### 1.6 CUDA信息
-**检查命令及结果：**
+- **检查命令及结果：**
 执行 `nvidia-smi` 命令时，终端提示：
 `Command 'nvidia-smi' not found, but can be installed with: sudo apt install nvidia-utils-435...`
 
-**结论：**
+- **结论：**
 本机 CPU 为 AMD Ryzen 5 7530U（集成 AMD Radeon 显卡），无 NVIDIA 独立显卡。
 因此无法安装 NVIDIA 驱动及 CUDA 工具包，`nvidia-smi` 无法找到是正常现象。
 
